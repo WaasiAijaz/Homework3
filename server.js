@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
-app.set('view engine', 'ejs');
+const postRouter = require('./routes/posts');
+app.set('view engine', 'ejs')
+app.use('/posts', postRouter);
 app.get('/', (req, res) =>{
-    console.log('Here');
-    res.render("index", {post: "Posts"})
+    res.send('Welcome to the Posts page!')
 });
 app.listen(3030);
