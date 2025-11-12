@@ -3,7 +3,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.get('/', (req, res) =>{
     console.log('Here');
-    res.render("index", {post:"Posts"});
+    res.send('All Posts');
     
 });
 app.listen(3030);
